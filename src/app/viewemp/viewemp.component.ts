@@ -23,7 +23,7 @@ export class ViewempComponent implements OnInit {
   emp:Emp;
   
   ngOnInit(): void {
-    this.empService.viewEmployee().subscribe(
+    this.empService.getEmployees().subscribe(
       data=>{
         console.log(data); 
         this.emps=data;
@@ -43,6 +43,15 @@ export class ViewempComponent implements OnInit {
 
 
   p:number=1;
+
+
+  // deleteEmployee(employee: Employee): void {
+  //   this.httpClientService.deleteEmployee(employee)
+  //     .subscribe( data => {
+  //       this.employees = this.employees.filter(u => u !== employee);
+  //     })
+  // };
+
 
 
   removeEmp(eid){
@@ -71,7 +80,7 @@ export class ViewempComponent implements OnInit {
 
 
   fetchData() {
-    this.empService.viewEmployee().subscribe(data =>{
+    this.empService.getEmployees().subscribe(data =>{
         this.emp = data;
         console.log(data[0].empId);
         console.log("after again fetching data");

@@ -1,20 +1,20 @@
-<section class="bg-light">
-<section class="fixed bg-dark">
-<header class="bg-grey p-2 text-center text-info">
-  <h2 class="text-center ">Employee Management</h2>
+<section class="">
+<section class="header">
+<header class=" text-dark">
+  <h1 class="text-center ">Employee Management</h1>
 </header>
-<nav class=" bg-light-gradient m-1 p-2 text-center fixed nav-bar " maxHeight="800">
-  <ul class="">
-    <li><a *ngIf="loginService.isUserLoggedIn()" class="nav-link row" routerLink = "/view">View Employee</a></li>
+<nav class="" maxHeight="200" id="div_top_hypers">
+  <ul class="nav-link" id="ul_top_hypers">
+    <li><a *ngIf="loginService.isUserLoggedIn()" class="a_top_hypers m-4 p-4" routerLink = "/view">  View Employee </a></li>
   <!-- <a *ngIf="loginService.isUserLoggedIn()" class="m-2 text-white center h5" routerLink = "/add">Add Employee</a> -->
-  <li><a *ngIf="loginService.isUserLoggedIn()" class="nav-link row" routerLink = "/add">Add Employee</a></li>
-  <li><a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink = "/login">Login</a></li>
-  <li><a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink = "/logout">Logout</a></li>
-
+  <li><a *ngIf="loginService.isUserLoggedIn()" class="a_top_hypers m-4 p-4" routerLink = "/add">   Add Employee  </a></li>
+  <li><a *ngIf="!loginService.isUserLoggedIn()" class="a_top_hypers m-4 p-4" routerLink = "/login">  Login </a></li>
+  <li><a *ngIf="loginService.isUserLoggedIn()" class=" a_top_hypers m-4 p-4" routerLink = "/logout">  Logout  </a></li>
   </ul>
   </nav>
 </section >
 <article class="col-8 mx-auto  text-white" >
   <router-outlet ></router-outlet>
 </article>
+<app-footer></app-footer>
 </section>

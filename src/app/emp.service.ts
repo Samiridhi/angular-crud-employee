@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Emp } from './emp';
@@ -24,27 +24,59 @@ export class EmpService {
     // console.log("emp service instance....");
   }
 
+
+  getEmployees():Observable<any>{
+    let username='admin';
+    let password='password';
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.http.get<Emp[]>('http://localhost:8081/employee/viewall',{headers});
+  
+  }
+
+
+
   addEmployee(emp:Emp):Observable<any>{
     // this.emps.push(emp);
-    return this.http.post("http://localhost:8081/empcrud/addemp",emp );
+    let username='admin';
+    let password='password';
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    
+    return this.http.post("http://localhost:8081/empcrud/addemp",emp , {headers});
   }
 
-  viewEmployee():Observable<any>{
-    return this.http.get("http://localhost:8081/employee/viewall");
+  // viewEmployee():Observable<any>{
+  //   return this.http.get("http://localhost:8081/employee/viewall");
 
-  }
+  // }
 
   editEmployee(emp:Emp):Observable<any>{
-    return this.http.put("http://localhost:8081/empcrud/editemp", emp);
+    let username='admin';
+    let password='password';
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    
+    return this.http.put("http://localhost:8081/empcrud/editemp", emp, {headers});
   }
 
   removeemp(eid:number):Observable<any>{
-console.log(eid)
-    return this.http.delete("http://localhost:8081/empcrud/removeemp?empId="+eid);
+    console.log(eid)
+    let username='admin';
+    let password='password';
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+
+    return this.http.delete("http://localhost:8081/empcrud/removeemp?empId="+eid, {headers});
     // return this.http.delete()
   }
 
   viewEmployeeById(eid:number):Observable<any>{
-    return this.http.get("http://localhost:8081/employee/viewbyid/"+eid);
+    let username='admin';
+    let password='password';
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    
+    return this.http.get("http://localhost:8081/employee/viewbyid/"+eid, {headers});
   }
 }

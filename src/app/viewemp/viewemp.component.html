@@ -1,14 +1,14 @@
 <section class="m-2 text-white text-center ">
-    <h5 class="text-center m-1  text-muted"><u>EMPLOYEE DETAILS</u></h5>
+    <h2 class="header"><u>EMPLOYEE DETAILS</u></h2>
      <div class="input-group mb-1 m-1">
         <input type="text" class="form-control form-control-sm " ngDefaultControl placeholder="Search for id or first or last name " [(ngModel)] = "searchstr" >
         <button type="submit" class="input-group-text btn-success sm" [(ngModel)] = "searchstr" ngDefaultControl><i class="bi bi-search me-1"></i> Search</button>
     </div>
 
-    <div style="width:100%;overflow:auto; max-height:100px;" class="text-primary table-wrapper-scroll-y my-custom-scrollbar">{{msg}} </div>
+    <div style="overflow-x:auto;" class="text-primary table-wrapper-scroll-y my-custom-scrollbar">{{msg}} </div>
     <table class="header-fixed table table-fit table-bordered table-hover responsive table-stripped table-sm "  >
         <thead class="thead-striped ">
-        <tr class=" fixed ">
+        <tr class="  ">
             <th class="table-active" (click)="sort('id')">Emp Id&nbsp;<i class="fa fa-sort ">^</i></th>
             <th class="table-active" (click)="sort('fname')">Emp First Name&nbsp;<i class="fa fa-sort">^</i></th>
             <th class="table-active">Emp Last Name</th>
@@ -20,14 +20,14 @@
             
         </tr>
         <tr *ngFor="let e of emps | searchby:searchstr | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p}; let i=index " class="hover-highlight">
-            <td class="table-info">{{e.empId}} </td>
-            <td class="table-info">{{e.empFName | titlecase}} </td>
-            <td class="table-info">{{e.empLName | titlecase}} </td>
-            <td class="table-info">{{e.empDesignation | uppercase}} </td>
-            <td class="table-info">{{e.empPManager | titlecase}} </td>
-            <td class="table-info">{{e.empProject | titlecase}} </td>
+            <td class="">{{e.empId}} </td>
+            <td class="">{{e.empFName | titlecase}} </td>
+            <td class="">{{e.empLName | titlecase}} </td>
+            <td class="">{{e.empDesignation | uppercase}} </td>
+            <td class="">{{e.empPManager | titlecase}} </td>
+            <td class="">{{e.empProject | titlecase}} </td>
             <td class=""><input type="button" class="btn btn-warning" value="Update" routerLink="/edit/{{e.empId}}"/></td>
-            <td class=""><input type="button" class="btn btn-danger text-black" value="Delete" (click)= "removeEmp(e.empId)"/></td>
+            <td class=""><input type="button" class="btn btn-danger text-white" value="Delete" (click)= "removeEmp(e.empId)"/></td>
         </tr>
     </thead>
     <pagination-controls (pageChange)="p = $event" class="bg-dark"></pagination-controls>

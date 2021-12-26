@@ -1,0 +1,49 @@
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #82b2c5;
+    color: rgb(44, 32, 32);
+    font-size: 20px;
+    max-height: fit-content;
+  }
+  :host {
+  /* font-style: italic; */
+}
+
+:host(.active) {
+  font-weight: bold;
+}
+:host ::ng-deep h3 {
+    font-style: italic;
+  }
+
+#div_top_hypers {
+    background-color:#eeeeee;
+    display:inline;      
+}
+#ul_top_hypers li{
+    display: inline;
+}
+/* unvisited link */
+a:link {
+    color: red;
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(122, 83, 103);
+    text-decoration: none;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(88, 31, 61);
+    text-decoration: underline;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+    text-decoration: underline;
+  }

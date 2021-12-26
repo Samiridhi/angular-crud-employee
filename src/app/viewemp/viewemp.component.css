@@ -1,0 +1,10 @@
+.header{
+    color: rgb(122, 83, 103);
+    font-style: normal;
+}
+.table-striped tr:nth-child(even):hover td a {
+    color: #3c3c3c;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
