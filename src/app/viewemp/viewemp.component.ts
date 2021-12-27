@@ -35,7 +35,7 @@ export class ViewempComponent implements OnInit {
   }
 
   key:string = 'this.emp.empId';
-  reverse:boolean = false;
+  reverse:boolean = true;
   sort(key){
     this.key = key;
     this.reverse = !this.reverse;
