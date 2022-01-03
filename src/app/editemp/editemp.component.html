@@ -20,7 +20,7 @@
         <div *ngIf="edesignation.invalid && edesignation.touched" class="text-danger">Employee designation is required </div>
 
         <div class=""> Manager</div>
-        <div><input type="text" #epmanager="ngModel"  name="txtepmanager"  [(ngModel)] = "emp.empPManager " /></div>
+        <div><input type="number" #epmanager="ngModel"  name="txtepmanager"  [(ngModel)] = "emp.empPManager " /></div>
         <!-- <div *ngIf="epmanager.invalid && epmanager.touched" class="text-danger">Employee Project Manager is required </div> -->
 
         <div class=""> Project</div>
