@@ -1,10 +1,15 @@
 <div class="container ">
     <div class="my-5 text-dark">
-      User Name : <input type="text" name="username" [(ngModel)]="username">
+      Username : <input type="text" name="username" [(ngModel)]="username">
+      <br/>
+      <br/>
+      <br/>
       Password : <input type="password" name="password" [(ngModel)]="password">
     </div>
     <div class="text-danger m-2 p-2" *ngIf="msg != undefined">{{msg}} </div>
-    <button (click)=checkLogin() class="btn btn-success border border-light p-2.5 mb-5 ">
+    <br/>
+      <br/>
+    <button (click)=checkLogin() class="btn btn-success btn-md float-right float-right ">
       Login
     </button>
   </div>

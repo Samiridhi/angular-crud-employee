@@ -18,6 +18,7 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { FooterComponent } from './footer/footer.component';
+import { SingleEmployeeDetailsComponent } from './single-employee-details/single-employee-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     ViewbyidComponent,
     LoginComponent,
     LogoutComponent,
-    FooterComponent
+    FooterComponent,
+    SingleEmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -52,7 +52,15 @@ export class ViewempComponent implements OnInit {
   //     })
   // };
 
+  // SingleEmployee(eid){
+  //   console.log("Single employee details shown");
+  //   this.empService.viewEmployeeById(eid).subscribe(
+  //     data=>{
+  //       console.log(data);
 
+  //     }
+  //   )
+  // }
 
   removeEmp(eid){
     console.log("line 38 in view");

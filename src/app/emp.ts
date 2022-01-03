@@ -3,6 +3,6 @@ export class Emp {
     empFName:string;
     empLName:string;
     empDesignation:string;
-    empPManager:string;
+    empPManager:number;
     empProject:string;
 }

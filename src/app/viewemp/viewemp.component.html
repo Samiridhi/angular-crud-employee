@@ -6,17 +6,18 @@
     </div>
 
     <div style="overflow-x:auto;" class="text-primary table-wrapper-scroll-y my-custom-scrollbar">{{msg}} </div>
-    <table class="header-fixed table table-fit table-bordered table-hover responsive table-stripped table-sm "  >
+    <table class="header-fixed table table-fit table-bordered table-hover table-responsive table-stripped table-sm "  >
         <thead class="thead-striped ">
-        <tr class="  ">
-            <th class="table-active" (click)="sort('id')">Emp Id&nbsp;<i class="fa fa-sort ">^</i></th>
-            <th class="table-active" (click)="sort('fname')">Emp First Name&nbsp;<i class="fa fa-sort">^</i></th>
-            <th class="table-active">Emp Last Name</th>
-            <th class="table-active">Designation</th>
-            <th class="table-active">Employee Manager</th>
-            <th class="table-active">Project</th>
-            <th class="table-active">Update</th>
-            <th class="table-active">Delete</th>
+        <tr class=" m-2 p-2 ">
+            <th class="table-active m-2 p-2" (click)="sort('id')">Employee Id&nbsp;<i class="fa fa-sort ">^</i></th>
+            <th class="table-active m-2 p-2" (click)="sort('fname')"> FirstName&nbsp;<i class="fa fa-sort">^</i></th>
+            <th class="table-active m-2 p-2"> LastName</th>
+            <th class="table-active m-2 p-2">Designation</th>
+            <th class="table-active m-2 p-2">Manager</th>
+            <th class="table-active m-2 p-2">Project</th>
+            <th class="table-active m-2 p-2">Update</th>
+            <th class="table-active m-2 p-2">Delete</th>
+            <th class="table-active m-2 p-2">Details</th>
             
         </tr>
         <tr *ngFor="let e of emps | searchby:searchstr | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p}; let i=index " class="hover-highlight">
@@ -24,10 +25,11 @@
             <td class="">{{e.empFName | titlecase}} </td>
             <td class="">{{e.empLName | titlecase}} </td>
             <td class="">{{e.empDesignation | uppercase}} </td>
-            <td class="">{{e.empPManager | titlecase}} </td>
+            <td class="">{{e.empPManager }} </td>
             <td class="">{{e.empProject | titlecase}} </td>
             <td class=""><input type="button" class="btn btn-warning" value="Update" routerLink="/edit/{{e.empId}}"/></td>
             <td class=""><input type="button" class="btn btn-danger text-white" value="Delete" (click)= "removeEmp(e.empId)"/></td>
+            <td class=""><input type="button" class="btn btn-info text-darl" value="Details" routerLink="/employee-details/{{e.empId}}"/></td>
         </tr>
     </thead>
     <pagination-controls (pageChange)="p = $event" class="bg-dark"></pagination-controls>

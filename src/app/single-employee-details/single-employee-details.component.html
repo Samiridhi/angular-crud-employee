@@ -1,0 +1,19 @@
+<h3 class="text-dark"> View Employee Details</h3>
+<div class="text-dark">
+    <div>
+        <label> <b> First Name:   </b></label>      {{employee.empFName | titlecase}}
+    </div>
+    <div>
+        <label> <b> Last Name:   </b></label>     {{employee.empLName | titlecase}} 
+    </div>
+    <div>
+        <label> <b> Desination:   </b></label>     {{employee.empDesignation | uppercase}}
+    </div>
+    <div>
+        <label> <b> Manager:   </b></label>     {{employee.empPManager | titlecase}}
+    </div>
+    <div>
+        <label> <b> Project:   </b></label>     {{employee.empProject | uppercase}}
+    </div>
+    <div class=""><input class="bg-info m-4 btn-sm btn-success text-dark" type="button" value="Back to Employee List"  routerLink="/view" /></div>
+</div>

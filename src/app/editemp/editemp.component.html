@@ -7,23 +7,23 @@
         <div><input type="number" #eid="ngModel"  name="txteid" [(ngModel)] = "emp.empId " readonly /></div>
         <!-- <div *ngIf="eid.invalid && eid.touched " class="text-danger">Employee Id is required</div> -->
 
-        <div class="">Employee First Name</div>
+        <div class=""> First Name</div>
         <div><input type="text" #efname="ngModel" required name="txtfname"  [(ngModel)] = "emp.empFName " /></div>
         <div *ngIf="efname.invalid && efname.touched" class="text-danger">Employee first name is required </div>
 
-        <div class="">Employee Last Name</div>
+        <div class=""> Last Name</div>
         <div><input type="text" #elname="ngModel" required name="txtlname"  [(ngModel)] = "emp.empLName " /></div>
         <div *ngIf="elname.invalid && elname.touched" class="text-danger">Employee last name is required </div>
 
-        <div class="">Employee Designation</div>
+        <div class=""> Designation</div>
         <div><input type="text" #edesignation="ngModel" required name="txtedesignation"  [(ngModel)] = "emp.empDesignation " /></div>
         <div *ngIf="edesignation.invalid && edesignation.touched" class="text-danger">Employee designation is required </div>
 
-        <div class="">Employee Manager</div>
-        <div><input type="text" #epmanager="ngModel" required name="txtepmanager"  [(ngModel)] = "emp.empPManager " /></div>
-        <div *ngIf="epmanager.invalid && epmanager.touched" class="text-danger">Employee Project Manager is required </div>
+        <div class=""> Manager</div>
+        <div><input type="text" #epmanager="ngModel"  name="txtepmanager"  [(ngModel)] = "emp.empPManager " /></div>
+        <!-- <div *ngIf="epmanager.invalid && epmanager.touched" class="text-danger">Employee Project Manager is required </div> -->
 
-        <div class="">Employee Project</div>
+        <div class=""> Project</div>
         <div><input type="text" #project="ngModel" required pattern="[a-z]{3,15}" name="txtproject"  [(ngModel)] = "emp.empProject " /></div>
         <!-- <div *ngIf="empProject.invalid && empProject.touched" class="text-danger">Employee Project is required </div> -->
 
