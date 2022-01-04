@@ -28,7 +28,12 @@ errorMsg:string;
       data=>{
         console.log(data);
         this.emp=data;
-        }
+        },
+        error=>{
+          console.log(error); 
+          this.errorMsg=error.error.msg;
+          this.msg = undefined;
+        }      
     );
       
 
