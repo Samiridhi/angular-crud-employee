@@ -5,7 +5,8 @@
         <button type="submit" class="input-group-text btn-success sm" [(ngModel)] = "searchstr" ngDefaultControl><i class="bi bi-search me-1"></i> Search</button>
     </div>
 
-    <div style="overflow-x:auto;" class="text-primary table-wrapper-scroll-y my-custom-scrollbar">{{msg}} </div>
+    <div style="overflow-x:auto;" 
+    class="text-primary table-wrapper-scroll-y my-custom-scrollbar">{{msg}} </div>
     <table class="header-fixed table table-fit table-bordered table-hover table-responsive table-stripped table-sm "  >
         <thead class="thead-striped ">
         <tr class=" m-2 p-2 ">
@@ -21,7 +22,11 @@
             <th class="table-active m-2 p-2">Details</th>
             
         </tr>
-        <tr *ngFor="let e of emps | searchby:searchstr | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p}; let i=index " class="hover-highlight">
+        <tr *ngFor="let e of emps | searchby:searchstr | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p}; let i=index " 
+        infinite-scroll 
+        (scrolled)="onScrollDown($event)" 
+        (scrolledUp)="onScrollUp($event)"
+        class="hover-highlight">
             <td class="" routerLink="/employee-details/{{e.empId}}" >{{e.empId}} </td>
             <td class="">{{e.empFName | titlecase}} </td>
             <td class="">{{e.empLName | titlecase}} </td>
