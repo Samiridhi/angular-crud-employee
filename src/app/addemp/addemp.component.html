@@ -1,38 +1,61 @@
-<section class="m-1 text-dark row " >
-    <h2>Add New Employee Details</h2>
+<section class="m-1 text-dark row add" >
+    <p>Add New Employee Details</p>
     <!-- <form #frm ="ngForm" (ngSubmit)="addEmployee(emp)" > -->
         
     <div class="text-primary" *ngIf="msg != undefined">{{msg}} </div>
     <div class="text-danger" *ngIf="errorMsg != undefined" >{{errorMsg}} </div>
     <form #frm ="ngForm">
-        <!-- <div class="">Employee Id</div> -->
-        <!-- <div><input type="number" #eid="ngModel"  name="txteid" [(ngModel)] = "emp.empId " /></div> -->
-        <!-- <div *ngIf="eid.invalid && eid.touched" class="text-danger ">Employee Id is required</div> -->
+        <tbody>
 
-        <div class=""> First Name</div>
-        <div><input type="text" #efname="ngModel" required pattern="[a-z]{3,15}" name="txtfname"  [(ngModel)] = "emp.empFName " /></div>
-        <div *ngIf="efname.invalid && efname.touched" class="text-danger">Employee first name is required </div>
+            <!-- <div class="">Employee Id</div> -->
+            <!-- <div><input type="number" #eid="ngModel"  name="txteid" [(ngModel)] = "emp.empId " /></div> -->
+            <!-- <div *ngIf="eid.invalid && eid.touched" class="text-danger ">Employee Id is required</div> -->
+            
+            <th><div class=""> First Name</div></th>
+            <th><div class=""> Last Name</div></th>
+            <th><div class=""> Designation</div></th>
+            <th><div class=""> Manager</div></th>
+            <th><div class=""> Project</div></th>
+            
 
-        <div class=""> Last Name</div>
-        <div><input type="text" #elname="ngModel" pattern="[a-z]{3,15}" name="txtlname"  [(ngModel)] = "emp.empLName " /></div>
-        <div *ngIf="elname.invalid && elname.touched" class="text-danger">Employee last name is required </div>
+<tr>
 
-        <div class=""> Designation</div>
-        <div><input type="text" #edesignation="ngModel" required pattern="[a-z]{2,15}" name="txtedesignation"  [(ngModel)] = "emp.empDesignation " /></div>
-        <div *ngIf="edesignation.invalid && edesignation.touched" class="text-danger">Employee designation is required </div>
+    <td><div><input type="text" #efname="ngModel" required pattern="[a-z]{3,15}" name="txtfname"  [(ngModel)] = "emp.empFName " /></div>
+        <div *ngIf="efname.invalid && efname.touched" class="text-danger">Employee first name is required </div></td>
+        
+        
+        <td>
+            <div><input type="text" #elname="ngModel" pattern="[a-z]{3,15}" name="txtlname"  [(ngModel)] = "emp.empLName " /></div>
+            <div *ngIf="elname.invalid && elname.touched" class="text-danger">Employee last name is required </div>
+        </td>
+            
+        <td>
+            <div><input type="text" #edesignation="ngModel" required pattern="[a-z]{2,15}" name="txtedesignation"  [(ngModel)] = "emp.empDesignation " /></div>
+            <div *ngIf="edesignation.invalid && edesignation.touched" class="text-danger">Employee designation is required </div>
+        </td>
+                
+        <td>
+            <div><input type="text" #epmanager="ngModel" pattern="[a-z]{3,15}" name="txtepmanager"  [(ngModel)] = "emp.empPManager " /></div>
+            <div *ngIf="epmanager.invalid && epmanager.touched" class="text-danger">Employee Project Manager is required </div>
+        </td>
+                    
+        <td>
+            <div><input type="text" #project="ngModel" required pattern="[a-z]{3,15}" name="txtproject"  [(ngModel)] = "emp.empProject " /></div>
+        </td>
 
-        <div class=""> Manager</div>
-        <div><input type="text" #epmanager="ngModel" pattern="[a-z]{3,15}" name="txtepmanager"  [(ngModel)] = "emp.empPManager " /></div>
-        <div *ngIf="epmanager.invalid && epmanager.touched" class="text-danger">Employee Project Manager is required </div>
-
-
-        <div class=""> Project</div>
-        <div><input type="text" #project="ngModel" required pattern="[a-z]{3,15}" name="txtproject"  [(ngModel)] = "emp.empProject " /></div>
-        <!-- <div *ngIf="empProject.invalid && empProject.touched" class="text-danger">Employee Project is required </div> -->
-
-        <!-- <div><input type="submit"value="add employeee" (click)="empService.addEmployee(emp)" /></div> -->
-        <div><input class="bg-info dark m-4 p-2 text-dark" type="button" value="Add Employee" [disabled]="!frm.valid" (click)="addEmployee(emp)" /></div>
-
-        <!-- <div><input type="button" value="add employeee" [disabled]="!frm.valid"  /></div> -->
+        
+    <!-- <div *ngIf="empProject.invalid && empProject.touched" class="text-danger">Employee Project is required </div> -->
+    
+    <!-- <div><input type="submit"value="add employeee" (click)="empService.addEmployee(emp)" /></div> -->
+    
+    
+    <!-- <div><input type="button" value="add employeee" [disabled]="!frm.valid"  /></div> -->
+</tr>
+    </tbody>
+    <th><div> Gender</div> </th>
+    <td>
+        <div><input type="text" #egender="ngModel" required pattern="[a-z]{3,15}" name="gender"  [(ngModel)] = "emp.gender " /></div>
+    </td>
+    <div><button class="btn btn-outline-success" type="button" value="Add Employee" [disabled]="!frm.valid" (click)="addEmployee(emp)" >Add Employee </button></div>
     </form>
 </section>

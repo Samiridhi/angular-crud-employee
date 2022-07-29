@@ -12,6 +12,8 @@ export class SingleEmployeeDetailsComponent implements OnInit {
 
   id: number
   employee: Emp
+  genFlag:boolean;
+
   constructor(private route: ActivatedRoute, private empService:EmpService ) { }
 
   ngOnInit() :void {
@@ -20,6 +22,10 @@ export class SingleEmployeeDetailsComponent implements OnInit {
     this.employee = new Emp();
     this.empService.viewEmployeeById(this.id).subscribe( data => {
       this.employee = data;
+      if(this.employee.gender=="male")
+      this.genFlag=false;
+      else if(this.employee.gender=="female")
+      this.genFlag=true;
     });
   }
 

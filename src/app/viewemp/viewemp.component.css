@@ -1,10 +1,44 @@
 .header{
     color: rgb(122, 83, 103);
     font-style: normal;
+    font-size: 3vh;
 }
-.table-striped tr:nth-child(even):hover td a {
-    color: #3c3c3c;
+table{
+  margin: 40px;
+}
+tr:nth-child(odd) {
+  background-color: #f2f5f7;
   }
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
+  th {
+    background-color: #e9e3e3;
   }
+  table {
+    /* border: 0.5vw solid #CCC; */
+    /* border-collapse: collapse; */
+}
+.sid{
+  margin: 20px;
+}
+td {
+    border: none;
+    border-collapse: collapse;
+}
+.input-group{
+  width: 35vw;
+}
+.ngx-pagination {
+  padding-left: 0px !important;
+}
+
+.ngx-pagination .current,
+.btn-info {
+  background: #17a2b8 !important;
+  border: transparent !important;
+  border-radius: 20px !important;
+}
+
+.ngx-pagination .current:hover {
+  background: #17a2b8 !important;
+  border-radius: 20px !important; 
+  border: transparent !important;
+}

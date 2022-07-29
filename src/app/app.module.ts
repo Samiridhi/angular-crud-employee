@@ -20,6 +20,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { FooterComponent } from './footer/footer.component';
 import { SingleEmployeeDetailsComponent } from './single-employee-details/single-employee-details.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     Ng2OrderModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

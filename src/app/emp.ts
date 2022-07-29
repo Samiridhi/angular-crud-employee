@@ -6,4 +6,5 @@ export class Emp {
     empPManager:string;
     idmanager:number;
     empProject:string;
+    gender:string;
 }

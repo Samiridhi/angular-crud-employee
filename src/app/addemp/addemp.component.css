@@ -1,0 +1,32 @@
+*{
+    color: rgb(122, 83, 103);
+    font-style: normal;
+    font-size: 2.5vh;
+    
+}
+p{
+    text-decoration: underline;
+}
+th{
+    justify-content: center;
+    padding: 5px;
+
+}
+td{
+    padding: 5px;
+    margin: 5px;
+}
+input{
+    border: 1px solid grey;
+    
+}
+button{
+    font-size: 15px;
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+
+}
+button:active{
+    text-decoration: lightcyan;
+}

@@ -15,6 +15,8 @@ export class EditempComponent implements OnInit {
   msg:string;
 errorMsg:string;
   eid:number;
+  genFlag:boolean;
+
   constructor(private empService:EmpService, 
     private activatedRoute:ActivatedRoute,
     private router:Router) { }
@@ -28,6 +30,11 @@ errorMsg:string;
       data=>{
         console.log(data);
         this.emp=data;
+        if(this.emp.gender=="male")
+      this.genFlag=false;
+      else if(this.emp.gender=="female")
+      this.genFlag=true;
+    
         },
         error=>{
           console.log(error); 

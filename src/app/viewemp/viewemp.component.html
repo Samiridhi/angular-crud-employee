@@ -1,32 +1,42 @@
-<section class="m-2 text-white text-center ">
-    <h2 class="header"><u>EMPLOYEE DETAILS</u></h2>
-     <div class="input-group mb-1 m-1">
-        <input type="text" class="form-control form-control-sm " ngDefaultControl placeholder="Search for id or first or last name " [(ngModel)] = "searchstr" >
-        <button type="submit" class="input-group-text btn-success sm" [(ngModel)] = "searchstr" ngDefaultControl><i class="bi bi-search me-1"></i> Search</button>
+<section class="m-1 text-white  text-center">
+    <h3 class="header"><u>EMPLOYEES</u></h3>
+    <div class="row text-center sid">
+
+        <div class="input-group m-4 col-md-8 ">
+            <input type="text" class="form-control " ngDefaultControl placeholder="Search for id or first or last name " [(ngModel)] = "searchstr" >
+            <button type="submit" class="input-group-text btn-outline-success btn " [(ngModel)] = "searchstr" ngDefaultControl>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                
+            </button>
+        </div>
     </div>
 
     <div style="overflow-x:auto;" 
-    class="text-primary table-wrapper-scroll-y my-custom-scrollbar">{{msg}} </div>
-    <table class="header-fixed table table-fit table-bordered table-hover table-responsive table-stripped table-sm "  >
+    class="text-primary table-wrapper-scroll-y my-custom-scrollbar">
+    {{msg}} </div>
+    <table class="header-fixed table table-responsive table-sm "  >
         <thead class="thead-striped ">
-        <tr class=" m-2 p-2 ">
-            <th class="table-active m-2 p-2" (click)="sort('id')">Employee Id&nbsp;<i class="fa fa-sort ">^</i></th>
-            <th class="table-active m-2 p-2" (click)="sort('fname')"> FirstName&nbsp;<i class="fa fa-sort">^</i></th>
-            <th class="table-active m-2 p-2"> LastName</th>
-            <th class="table-active m-2 p-2">Designation</th>
+        <tr class= " m-4 p-4 ">
+            <th class=" m-2 p-2" (click)="sort('id')">Employee Id&nbsp;<i class="fa fa-sort ">^</i></th>
+            <th class=" m-2 p-2" (click)="sort('fname')"> FirstName&nbsp;<i class="fa fa-sort">^</i></th>
+            <th class=" m-2 p-2"> LastName</th>
+            <th class=" m-2 p-2">Designation</th>
             <!-- <th class="table-active m-2 p-2">Manager</th> -->
-            <th class="table-active m-2 p-2">Manager_ID</th>
-            <th class="table-active m-2 p-2">Project</th>
-            <th class="table-active m-2 p-2">Update</th>
+            <th class=" m-2 p-2">Manager_ID</th>
+            <th class=" m-2 p-2">Project</th>
+            <th class=" m-2 p-2" colspan="3">Actions</th>
+            <!-- <th class="table-active m-2 p-2">Update</th>
             <th class="table-active m-2 p-2">Delete</th>
-            <th class="table-active m-2 p-2">Details</th>
+            <th class="table-active m-2 p-2">Details</th> -->
             
         </tr>
         <tr *ngFor="let e of emps | searchby:searchstr | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p}; let i=index " 
         infinite-scroll 
         (scrolled)="onScrollDown($event)" 
         (scrolledUp)="onScrollUp($event)"
-        class="hover-highlight">
+        class="">
             <td class="" routerLink="/employee-details/{{e.empId}}" >{{e.empId}} </td>
             <td class="">{{e.empFName | titlecase}} </td>
             <td class="">{{e.empLName | titlecase}} </td>
@@ -34,11 +44,28 @@
             <!-- <td class="">{{e.empPManager | titlecase }} </td> -->
             <td class="hover-info" routerLink="/employee-details/{{e.idmanager}}">{{e.idmanager }} </td>
             <td class="">{{e.empProject | titlecase}} </td>
-            <td class=""><input type="button" class="btn btn-warning" value="Update" routerLink="/edit/{{e.empId}}"/></td>
-            <td class=""><input type="button" class="btn btn-danger text-white" value="Delete" (click)= "removeEmp(e.empId)"/></td>
-            <td class=""><input type="button" class="btn btn-info text-darl" value="Details" routerLink="/employee-details/{{e.empId}}"/></td>
+            
+            <td class=""><i class="material-icons btn-outline-warning"  routerLink="/edit/{{e.empId}}">edit</i></td>
+            <td class=""> <i class="material-icons btn-outline-danger" (click)= "removeEmp(e.empId)">delete</i></td>
+            <td class=""><i class="material-icons btn-outline-info" routerLink="/employee-details/{{e.empId}}">info</i></td>
         </tr>
     </thead>
-    <pagination-controls (pageChange)="p = $event" class="bg-dark"></pagination-controls>
+    
+    <pagination-controls 
+    (pageChange)="p = $event" 
+    class="bg-dark"
+    
+    (pageBoundsCorrection)="pageChanged($event)"
+    maxSize="9"
+    directionLinks="true"
+    autoHide="true"
+    responsive="true"
+    previousLabel="Previous"
+    nextLabel="Next"
+    screenReaderPaginationLabel="Pagination"
+    screenReaderPageLabel="page"
+    screenReaderCurrentLabel="You're on page"
+    >
+</pagination-controls>
     </table>
     </section>

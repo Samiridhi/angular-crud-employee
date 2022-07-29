@@ -1,19 +1,31 @@
-<h3 class="text-dark"> View Employee Details</h3>
-<div class="text-dark">
+<p class="text-dark"> Employee Details</p>
+
+<div class="card text-dark" >
+    <div class="" *ngIf="!genFlag; else elseBlock">
+<!-- <div> -->
+        <!-- <img  src="https://cdn4.iconfinder.com/data/icons/people-avatar-1-1/128/29-512.png" alt="Card image cap"> -->
+    <!-- </div> -->
     <div>
-        <label> <b> First Name:   </b></label>      {{employee.empFName | titlecase}}
+        <img style="width: 200px; margin-left: 40px; height: 150px;" src="../../assets/admin-image-png-5.png" alt="Card image cap">
     </div>
-    <div>
-        <label> <b> Last Name:   </b></label>     {{employee.empLName | titlecase}} 
     </div>
-    <div>
-        <label> <b> Desination:   </b></label>     {{employee.empDesignation | uppercase}}
+    <ng-template #elseBlock><div><img  src="../../assets/teacher-295387_640.png" alt="Card image cap"></div></ng-template>
+    <div class="card-body">
+        <div>
+            <label> <b> First Name:   </b></label>      {{employee.empFName | titlecase}}
+        </div>
+        <div>
+            <label> <b> Last Name:   </b></label>     {{employee.empLName | titlecase}} 
+        </div>
+        <div>
+            <label> <b> Desination:   </b></label>     {{employee.empDesignation | uppercase}}
+        </div>
+        <div>
+            <label> <b> Manager:   </b></label>     {{employee.empPManager | titlecase}}
+        </div>
+        <div>
+            <label> <b> Project:   </b></label>     {{employee.empProject | uppercase}}
+        </div>
     </div>
-    <div>
-        <label> <b> Manager:   </b></label>     {{employee.empPManager | titlecase}}
-    </div>
-    <div>
-        <label> <b> Project:   </b></label>     {{employee.empProject | uppercase}}
-    </div>
-    <div class=""><input class="bg-info m-4 btn-sm btn-success text-dark" type="button" value="Back to Employee List"  routerLink="/view" /></div>
-</div>
+    <div class="card-footer"><input class="bg-info m-4 btn-sm btn-success " type="button" value="Back to Employee List"  routerLink="/view" /></div>
+  </div>

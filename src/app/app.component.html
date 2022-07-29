@@ -1,20 +1,31 @@
-<section class="">
-<section class="header">
-<header class=" text-dark">
-  <h1 class="text-center ">Employee Management</h1>
-</header>
-<nav class="" maxHeight="200" id="div_top_hypers">
-  <ul class="nav-link" id="ul_top_hypers">
-    <li><a *ngIf="loginService.isUserLoggedIn()" class="a_top_hypers m-4 p-4" routerLink = "/view">  View Employee </a></li>
-  <!-- <a *ngIf="loginService.isUserLoggedIn()" class="m-2 text-white center h5" routerLink = "/add">Add Employee</a> -->
-  <li><a *ngIf="loginService.isUserLoggedIn()" class="a_top_hypers m-4 p-4" routerLink = "/add">   Add Employee  </a></li>
-  <li><a *ngIf="!loginService.isUserLoggedIn()" class="a_top_hypers m-4 p-4" routerLink = "/login">  Login </a></li>
-  <li><a *ngIf="loginService.isUserLoggedIn()" class=" a_top_hypers m-4 p-4" routerLink = "/logout">  Logout  </a></li>
-  </ul>
-  </nav>
-</section >
-<article class="col-8 mx-auto  text-white" >
+<section >
+  <div class="head">
+    <div class="header col-md-3">
+      <header class=" text-dark">
+        <h4 class="text-center m-1 p-1"><a  routerLink = "/">Employee Dashboard </a></h4>
+      </header>
+    </div >
+    <div class="nav-links col-md-9">
+      
+      <nav >        
+             
+          <ul class="nav-link " id="ul_top_hypers">
+            <li><a mat-stroked-button *ngIf="loginService.isUserLoggedIn()" class="a_top_hypers m-1 p-1" routerLink = "/view">View Employee</a></li>
+            <!-- <a *ngIf="loginService.isUserLoggedIn()" class="m-2 text-white center h5" routerLink = "/add">Add Employee</a> -->
+            <li><a *ngIf="loginService.isUserLoggedIn()" class="a_top_hypers m-2 p-2" routerLink = "/add">Add Employee</a></li>
+            <li><a *ngIf="!loginService.isUserLoggedIn()" class="a_top_hypers m-2 p-2" routerLink = "/login">Login</a></li>
+            <li class=""><a *ngIf="loginService.isUserLoggedIn()" class=" float-right " routerLink = "/logout">Logout</a></li>
+          </ul>
+             
+      </nav>
+      
+    </div>
+  </div>
+
+<article class="col-10 mx-auto text-white" >
   <router-outlet ></router-outlet>
 </article>
+
 <app-footer></app-footer>
+
 </section>
